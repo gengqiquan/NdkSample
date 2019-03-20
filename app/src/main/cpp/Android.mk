@@ -1,4 +1,4 @@
-LOCAL_PATH:=/usr/local/opt/opencv@3/bin:$PATH
+LOCAL_PATH:=$(call my-dir)
 
 include $(CLEAR_VARS)
 OpenCV_INSTALL_MODULES := on
