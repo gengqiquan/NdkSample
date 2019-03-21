@@ -14,6 +14,7 @@
 #include <opencv2/core/core.hpp>
 #include <opencv2/core/mat.inl.hpp>
 #include <opencv2/highgui/highgui.hpp>
+#include <vector>
 //
 using namespace cv;
 
@@ -53,13 +54,14 @@ Java_com_gengqiquan_ndksample_Compress_compress(
 //    cout << imageName << "'s height is"
 //         << image.size().height << endl;
 //    cout << image.depth() << endl;
-    Mat newimage;
-    resize(image, newimage, Size(100, 100)); //图像大小转换
+//    Mat newimage;
+//    resize(image, newimage, Size(720, 1280)); //图像大小转换
 //
 ////    imshow("newimage", newimage);  //显示变换大小后的图像
 ////    waitKey(0);
     std::string new_path = path.replace(path.find("."), 4, "000005.jpg");
-    imwrite(new_path, newimage); //保存图片
+//    std::vector<int> ilist= {IMWRITE_JPEG_QUALITY,50};
+    imwrite(new_path, image,{IMWRITE_JPEG_QUALITY,50}); //保存图片
     return env->NewStringUTF(new_path.c_str());
 }
 

@@ -43,8 +43,8 @@ public class ImageActivity extends AppCompatActivity {
                         long start = System.currentTimeMillis();
                         for (String path : list) {
 //                            try {
-//                                Compress.compress(mContext, path);
-                            Glide.with(mContext).load(  Compress.compress(mContext, path)).asBitmap().into(iv_img);
+                                Compress.compress(mContext, path);
+//                            Glide.with(mContext).load(  Compress.compress(mContext, path)).asBitmap().into(iv_img);
 //                                Luban.with(mContext).get(path).getPath();
 //                            } catch (IOException e) {
 //                                e.printStackTrace();
